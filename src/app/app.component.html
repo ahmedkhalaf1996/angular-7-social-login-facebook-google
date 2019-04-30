@@ -1,3 +1,15 @@
 <div>
-  <a (click)="signInWithFB()" >Loginwithfacebook</a>
+  <a (click)="signInWithFB()"  style='background:blue' >Loginwithfacebook</a>
+  <br>
+  <button (click)="signInWithGoogle()" >Loginwithgoogle</button>
 </div>
+
+<div>
+  <img [src]=photoUrl [alt]=name />
+  <h3>User name: {{ name }}</h3>
+  <h3>User email: {{ email }}</h3>
+</div>
+
+
+<!-- {{ id }} -->
+

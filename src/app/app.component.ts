@@ -12,22 +12,39 @@ import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } fro
 })
 export class AppComponent {
 
+  Data: any;
+  id: any;
+  name:any;
+  email: any;
+  photoUrl:any;
 
   constructor(private authService: AuthService) { }
 
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+      (userData)=>{
+        this.Data = userData;
+        this.id = userData.id;
+        this.name = userData.name;
+        this.email = userData.email;
+        this.photoUrl = userData.photoUrl;
+      }
+    );
   }
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(
-      userData => console.log(userData)
+      (userData)=>{
+        this.Data = userData;
+        this.id = userData.id;
+        this.name = userData.name;
+        this.email = userData.email;
+        this.photoUrl = userData.photoUrl;
+      }
     );
   }
 
-  signInWithLinkedIn(): void {
-    this.authService.signIn(LinkedInLoginProvider.PROVIDER_ID);
-  }
+
 
   signOut(): void {
     this.authService.signOut();

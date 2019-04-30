@@ -12,15 +12,11 @@ import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
+    provider: new GoogleLoginProvider("345029754252-8pmuhpouo264jetnb13n5hmvu81n5ftj.apps.googleusercontent.com")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
     provider: new FacebookLoginProvider("348841445988008")
-  },
-  {
-    id: LinkedInLoginProvider.PROVIDER_ID,
-    provider: new LinkedInLoginProvider("LinkedIn-client-Id", false, 'en_US')
   }
 ]);
 
